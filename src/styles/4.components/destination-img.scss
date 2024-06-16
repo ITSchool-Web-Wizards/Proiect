@@ -1,0 +1,7 @@
+.grid-container--destination > img {
+    grid-area: image;
+    max-width: 60%;
+    @media(min-width: 64em){
+        max-width: 90%;
+    }
+}

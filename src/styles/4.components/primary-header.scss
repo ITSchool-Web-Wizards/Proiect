@@ -1,0 +1,19 @@
+.primary-header {
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 48em) {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            height: 1px;
+            width: 100%;
+            background: rgba(var(--clr-light), 0.25);
+            margin-right: -3rem;
+            z-index: 2;
+        }
+        nav {
+            order: 2;
+        }
+      }
+}

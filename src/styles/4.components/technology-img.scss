@@ -1,0 +1,7 @@
+.grid-container--technology > picture {
+  grid-area: image;
+  padding-inline: 0;
+  @media (min-width: 64em) {
+    justify-self: end;
+  }
+}

@@ -6,7 +6,9 @@
     @media(min-width: 35em){
         max-width: 60%;
     }
+
     @media(min-width: 64em){
+        grid-column: span 2;
         max-width: 90%;
     }
 }

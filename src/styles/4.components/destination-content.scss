@@ -4,4 +4,7 @@
   p:not([class]) {
     max-width: 44ch;
   }
+  @media (max-width: 35em){
+    padding-inline: 1.5rem;
+  }
 }

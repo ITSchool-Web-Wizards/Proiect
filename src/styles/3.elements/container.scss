@@ -5,7 +5,6 @@
 }
 
 .grid-container {
-  padding-inline: 1.5rem;
   text-align: center;
   display: grid;
   place-items: center;
@@ -18,6 +17,7 @@
 }
 
 .grid-container--home {
+  padding-inline: 1.5rem;
   p:not([class]) {
     max-width: 50ch;
   }
@@ -84,5 +84,32 @@
       ". title title ."
       ". content image ."
       ". dots image .";
+  }
+}
+
+.grid-container--technology {
+  grid-template-areas:
+    "title" 
+    "image" 
+    "tabs" 
+    "content";
+
+  @media (min-width: 48em) {
+    --flow-space: 2rem;
+  }
+
+  @media (min-width: 64em) {
+    grid-template-columns:
+    minmax(2rem, 1fr)
+    minmax(0, 10rem)
+    minmax(0, 40rem)
+    minmax(0, 30rem)
+    minmax(2rem, 1fr);
+    grid-template-rows: min-content auto;
+    justify-items: center;
+    align-content: start;
+    grid-template-areas:
+      ". title title title ."
+      ". tabs content image image";
   }
 }

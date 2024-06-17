@@ -1,5 +1,6 @@
 import TabBtn from "../../Components/TabBtn";
 import DestContent from "../../Components/DestContent";
+import NumberedTitle from "../../Components/NumberedTitle";
 import { useState, useEffect } from "react";
 
 export default function Destination() {
@@ -31,10 +32,7 @@ export default function Destination() {
 
   return (
     <main className="grid-container grid-container--destination flow">
-      <h1 className="numbered-title">
-        <span aria-hidden="true">01</span>
-        Pick your destination
-      </h1>
+      <NumberedTitle number="01" title="Pick your destination"/>
       <img src={data[activeTab].image} alt={data[activeTab].name} />
       <div className="tab-list underline-indicators flex">
         {data.map((item, index) => (

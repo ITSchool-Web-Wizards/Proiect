@@ -1,6 +1,6 @@
 .underline-indicators > * {
     cursor: pointer;
-    padding: var(--underline-gap, 1rem) 0;
+    padding: var(--underline-gap, 0.5rem) 0;
     border: 0;
     border-bottom: .2rem solid rgba( var(--clr-light), 0);
   }

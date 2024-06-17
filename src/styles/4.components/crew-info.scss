@@ -1,0 +1,14 @@
+.crew-info {
+  flex-direction: column;
+  grid-area: content;
+  align-self: center;
+  h2 {
+    color: rgba(var(--clr-light), 0.5);
+  }
+  header {
+    --flow-space: 1rem;
+    + p {
+      max-width: 50ch;
+    }
+  }
+}

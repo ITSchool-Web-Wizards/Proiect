@@ -1,6 +1,6 @@
 export default function DestContent({ title, description, distance, travel}) {
     return ( 
-      <article className="destination-content">
+      <article className="destination-content flow">
         <h2 className="fs-800 uppercase ff-serif">{title}</h2>
         <p>{description}</p>
         <div className="destination-info flex">

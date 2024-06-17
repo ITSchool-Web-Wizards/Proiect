@@ -3,6 +3,7 @@
   font-size: var(--fs-500);
   text-transform: uppercase;
   letter-spacing: 4px;
+  align-self: start;
   grid-area: title;
   & span {
     margin-inline-end: 0.5em;

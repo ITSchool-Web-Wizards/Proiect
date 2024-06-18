@@ -10,7 +10,7 @@ export default function Destination() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch("../src/assets/data/data.json");
+            const response = await fetch("../../../public/data.json");
             if (!response.ok) {
               throw new Error("Network response error");
             }

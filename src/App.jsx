@@ -4,7 +4,7 @@ import Crew from "./Pages/Crew/Crew";
 import Technology from "./Pages/Technology/Technology";
 import NavBtn from "./Components/NavBtn";
 import HamburgerBtn from "./Components/HamburgerBtn";
-import logo from "./assets/shared/logo.svg";
+import logo from "../public/assets/shared/logo.svg";
 import { useState } from "react";
 
 export default function App() {

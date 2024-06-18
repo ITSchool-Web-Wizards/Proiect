@@ -7,14 +7,14 @@
         right: 1rem;
         top: 2rem;
         background: transparent;
-        background-image: url(./assets/shared/icon-hamburger.svg);
+        background-image: url(../../../public/assets/shared/icon-hamburger.svg);
         background-repeat: no-repeat;
         background-position: center;
         width: 1.5rem;
         aspect-ratio: 1;
         border: 0;
         &[aria-expanded="true"]{
-            background-image: url(./assets/shared/icon-close.svg);
+            background-image: url(../../../public/assets/shared/icon-close.svg);
         }
     }
 }

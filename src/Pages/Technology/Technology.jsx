@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 export default function Technology() {
     const [data, setData] = useState([]);
     const [activeTab, setActiveTab] = useState(0);
+    const dataFile = new URL("../../../public/data.json", import.meta.url).href
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-              const response = await fetch("../../../public/data.json");
+              const response = await fetch(dataFile);
               if (!response.ok) {
                 throw new Error("Network response error");
               }

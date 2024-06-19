@@ -41,7 +41,7 @@ export default function App() {
     }
   }, [location.pathname, navigate]);
 
-  const activeTab = mainTabs.findIndex((tab) => `/${tab.path}` === location.pathname.slice(1));
+  const activeTab = mainTabs.findIndex((tab) => tab.path === location.pathname);
   const activeBackground = "background-" + location.pathname.slice(1);
 
   return (

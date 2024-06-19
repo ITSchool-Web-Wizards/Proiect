@@ -2,27 +2,14 @@ import NumberedTitle from "../../Components/NumberedTitle";
 import DotBtn from "../../Components/DotBtn";
 import CrewContent from "../../Components/CrewContent";
 import { useState, useEffect } from "react";
+import { fetchData } from "../../Components/utils";
 
 export default function Crew() {
     const [data, setData] = useState([]);
     const [activeTab, setActiveTab] = useState(0);
-    const dataFile = new URL("../../../public/data.json", import.meta.url).href
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-              const response = await fetch(dataFile);
-              if (!response.ok) {
-                throw new Error("Network response error");
-              }
-              const jsonData = await response.json();
-              setData(jsonData.crew);
-            }
-            catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-        fetchData();
+      fetchData().then((e) => setData(e.crew))
     }, []);
 
     const changeTab = (index) => { setActiveTab(index); }

@@ -8,7 +8,7 @@
   grid-template-rows: min-content 1fr;
   background-size: cover;
 
-  &.background-home {
+  &.background-homepage {
     background-image: url(./assets/home/background-home-mobile.jpg);
     background-position: bottom center;
   }
@@ -26,7 +26,7 @@
   }
 
   @media (min-width: 48em) {
-    &.background-home {
+    &.background-homepage {
       background-image: url(./assets/home/background-home-tablet.jpg);
       background-position: center center;
     }
@@ -46,7 +46,7 @@
   }
 
   @media (min-width: 64em) {
-    &.background-home {
+    &.background-homepage {
       background-image: url(./assets/home/background-home-desktop.jpg);
     }
     &.background-destination {

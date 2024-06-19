@@ -14,10 +14,6 @@ export default function Destination() {
 
     const changeTab = (index) => { setActiveTab(index); };
 
-    if (!data[activeTab]) {
-        return <div>Error: No data available for the selected tab.</div>;
-      }
-
   return (
     <main className="grid-container grid-container--destination flow">
       <NumberedTitle number="01" title="Pick your destination"/>

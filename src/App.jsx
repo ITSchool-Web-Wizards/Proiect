@@ -1,7 +1,7 @@
 import NavBtn from "./Components/NavBtn";
 import HamburgerBtn from "./Components/HamburgerBtn";
 import logo from "../public/assets/shared/logo.svg";
-import { useLocation, Outlet, useNavigate } from "react-router-dom";
+import { useLocation, Outlet, useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function App() {
@@ -47,9 +47,9 @@ export default function App() {
   return (
       <div className={`background-image ${activeBackground}`}>
         <header className="primary-header flex">
-          <div>
+          <Link to="/homepage">
             <img src={logo} alt="space tourism logo" className="logo" />
-          </div>
+          </Link>
           <HamburgerBtn />
           <nav id="primary-navigation"
               className="primary-navigation underline-indicators flex"

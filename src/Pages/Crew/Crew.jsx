@@ -14,9 +14,9 @@ export default function Crew() {
 
     const changeTab = (index) => { setActiveTab(index); }
 
-    if (!data[activeTab]) {
-        return <div>Error: No data available for the selected tab.</div>;
-      }
+    if (data.length === 0) {
+      return <div></div>;
+    }
 
   return (
     <main className="grid-container grid-container--crew flow">

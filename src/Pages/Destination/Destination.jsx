@@ -14,6 +14,10 @@ export default function Destination() {
 
     const changeTab = (index) => { setActiveTab(index); };
 
+  if (data.length === 0) {
+      return <div></div>;
+    }
+
   return (
     <main className="grid-container grid-container--destination flow">
       <NumberedTitle number="01" title="Pick your destination"/>

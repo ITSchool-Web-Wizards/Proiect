@@ -1,22 +1,20 @@
 import NumberedTitle from "../../Components/NumberedTitle";
 import NumberedBtn from "../../Components/NumberedBtn";
 import TechnologyContent from "../../Components/TechnologyContent";
-import { useState, useEffect } from "react";
-import { fetchData } from "../../Components/utils";
+import { useLoadData } from "../../Components/utils";
+import LoadingLayout from "../../Components/LoadingLayout";
 
 export default function Technology() {
-    const [data, setData] = useState([]);
-    const [activeTab, setActiveTab] = useState(0);
+  const {  
+    isLoading,
+    data,
+    activeTab,
+    changeTab 
+  } = useLoadData("technology")
 
-    useEffect(() => {
-      fetchData().then((e) => setData(e.technology))
-    }, []);
-
-    const changeTab = (index) => { setActiveTab(index); }
-
-    if (data.length === 0) {
-      return <div></div>;
-    }
+  if (isLoading) {
+    return <LoadingLayout/>;
+  }
 
   return (
     <main className="grid-container grid-container--technology">

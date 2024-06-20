@@ -1,22 +1,20 @@
 import TabBtn from "../../Components/TabBtn";
 import DestContent from "../../Components/DestContent";
 import NumberedTitle from "../../Components/NumberedTitle";
-import { useState, useEffect } from "react";
-import { fetchData } from "../../Components/utils";
+import { useLoadData } from "../../Components/utils";
+import LoadingLayout from "../../Components/LoadingLayout";
 
 export default function Destination() {
-    const [data, setData] = useState([]);
-    const [activeTab, setActiveTab] = useState(0);
+  const {  
+    isLoading,
+    data,
+    activeTab,
+    changeTab 
+  } = useLoadData("destinations")
 
-    useEffect(() => {
-      fetchData().then((e) => setData(e.destinations))
-    }, []);
-
-    const changeTab = (index) => { setActiveTab(index); };
-
-  if (data.length === 0) {
-      return <div></div>;
-    }
+  if (isLoading) {
+    return <LoadingLayout/>;
+  }
 
   return (
     <main className="grid-container grid-container--destination flow">

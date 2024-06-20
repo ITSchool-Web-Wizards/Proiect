@@ -1,22 +1,20 @@
 import NumberedTitle from "../../Components/NumberedTitle";
 import DotBtn from "../../Components/DotBtn";
 import CrewContent from "../../Components/CrewContent";
-import { useState, useEffect } from "react";
-import { fetchData } from "../../Components/utils";
+import { useLoadData } from "../../Components/utils";
+import LoadingLayout from "../../Components/LoadingLayout";
 
 export default function Crew() {
-    const [data, setData] = useState([]);
-    const [activeTab, setActiveTab] = useState(0);
+  const {  
+    isLoading,
+    data,
+    activeTab,
+    changeTab 
+  } = useLoadData("crew")
 
-    useEffect(() => {
-      fetchData().then((e) => setData(e.crew))
-    }, []);
-
-    const changeTab = (index) => { setActiveTab(index); }
-
-    if (data.length === 0) {
-      return <div></div>;
-    }
+  if (isLoading) {
+    return <LoadingLayout/>;
+  }
 
   return (
     <main className="grid-container grid-container--crew flow">

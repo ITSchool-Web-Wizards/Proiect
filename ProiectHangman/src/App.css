@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.result-text {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.hint-text {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.keyboard-container {
+  align-self: stretch;
+}

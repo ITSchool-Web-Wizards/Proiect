@@ -1,5 +1,9 @@
 'use client'
 
+// https://medium.com/@jeremydickey/how-to-integrate-openai-in-your-react-projects-467b5dda1f38
+// https://medium.com/bina-nusantara-it-division/understanding-react-query-11e56960e90c
+// https://ninza7.medium.com/building-an-ai-chatbot-with-react-next-js-tailwind-css-and-openai-2e2bb0ca6b17
+
 import { useState } from "react";
 
 const HomePage = () => {
@@ -15,7 +19,7 @@ const HomePage = () => {
       const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer`,
+          Authorization: `Bearer `,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -24,7 +28,8 @@ const HomePage = () => {
             {
               role: "system",
               content:
-                "You are a personal math tutor. Write and run code to answer math questions.",
+              "Ești un profesor de matematică. Scrie soluția și explică metodic cum se aplică soluția pentru problema respectivă, în română.",
+                // "You are a personal math tutor. Write and run code to answer math questions and explain the method is apply to solve it.",
             },
             { role: "user", content: input },
           ],
@@ -56,7 +61,8 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="chat-container">
+      <h1>Welcome to the Math Professor GPT Application!</h1>
       <div className="chatbox">
         {messages.map((msg, index) => (
           <p key={index} className={msg.sender === 'user' ? 'user-msg' : 'bot-msg'}>
@@ -64,8 +70,10 @@ const HomePage = () => {
           </p>
         ))}
       </div>
-      <input type="text" value={input} onChange={handleInput} placeholder="Type your message..." />
-      <button onClick={sendMessage}>Send</button>
+      <div className="input-area">
+        <input type="text" value={input} onChange={handleInput} placeholder="Type your message..." />
+        <button onClick={sendMessage}>Send</button>
+      </div>
     </div>
   );
 };

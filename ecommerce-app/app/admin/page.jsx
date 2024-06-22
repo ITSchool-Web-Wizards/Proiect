@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { createClient } from "@/utils/supabase/client";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
 

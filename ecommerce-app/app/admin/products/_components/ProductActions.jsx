@@ -1,7 +1,7 @@
 "use client"
 
 import { toggleProductAvaialbilty, deleteProduct } from '@/app/admin/_actions/product'
-import { DropdownMenuItem } from '@/components/ui/dropdown-menu'
+import { DropdownMenuItem } from '@/app/components/ui/dropdown-menu'
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react'
 

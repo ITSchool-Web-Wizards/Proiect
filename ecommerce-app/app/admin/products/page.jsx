@@ -1,15 +1,15 @@
 import { PageHeader } from '../_components/PageHeader';
-import { Button } from '@/components/ui/button';
-import { Table, TableBody, TableHead, TableHeader, TableRow, TableCell } from '@/components/ui/table';
+import { Button } from '@/app/components/ui/button';
+import { Table, TableBody, TableHead, TableHeader, TableRow, TableCell } from '@/app/components/ui/table';
 import Link from 'next/link';
 import { createClient } from '@/utils/supabase/server';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import { formatCurrency, formatNumber } from '@/lib/formatters';
 import { MoreVertical } from 'lucide-react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/app/components/ui/dropdown-menu';
 import { _count } from '@/utils/supabase/server';
 import { ActiveToggleDropdownItem, DeleteDropdownItem } from '@/app/admin/products/_components/ProductActions';
-import { DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
+import { DropdownMenuSeparator } from '@/app/components/ui/dropdown-menu';
 
 
 

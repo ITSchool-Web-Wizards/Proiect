@@ -10,25 +10,21 @@ export default function App() {
       path: "/homepage",
       label: "Home",
       btnNumber: "00",
-      background: "background-home",
     },
     {
       path: "/destination",
       label: "Destination",
       btnNumber: "01",
-      background: "background-destination",
     },
     {
       path: "/crew",
       label: "Crew",
       btnNumber: "02",
-      background: "background-crew",
     },
     {
       path: "/technology",
       label: "Technology",
       btnNumber: "03",
-      background: "background-technology",
     },
   ];
 
@@ -60,7 +56,7 @@ export default function App() {
                   label={tab.label}
                   btnNumber={tab.btnNumber}
                   isActive={index === activeTab}
-                  to={`${tab.path}`}
+                  to={tab.path}
                 />
               ))}
           </nav>

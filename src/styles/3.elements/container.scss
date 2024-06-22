@@ -63,9 +63,9 @@
 
 .grid-container--crew {
   grid-template-areas:
-    "title" 
-    "content" 
-    "dots" 
+    "title"
+    "content"
+    "dots"
     "image";
 
   @media (min-width: 48em) {
@@ -74,10 +74,10 @@
 
   @media (min-width: 64em) {
     grid-template-columns:
-    minmax(2rem, 1fr)
-    minmax(0, 40rem)
-    minmax(0, 40rem)
-    minmax(2rem, 1fr);
+      minmax(2rem, 1fr)
+      minmax(0, 40rem)
+      minmax(0, 40rem)
+      minmax(2rem, 1fr);
     justify-items: start;
     align-content: start;
     grid-template-areas:
@@ -89,9 +89,9 @@
 
 .grid-container--technology {
   grid-template-areas:
-    "title" 
-    "image" 
-    "tabs" 
+    "title"
+    "image"
+    "tabs"
     "content";
 
   @media (min-width: 48em) {
@@ -100,11 +100,11 @@
 
   @media (min-width: 64em) {
     grid-template-columns:
-    minmax(2rem, 1fr)
-    minmax(0, 10rem)
-    minmax(0, 40rem)
-    minmax(0, 30rem)
-    minmax(2rem, 1fr);
+      minmax(2rem, 1fr)
+      minmax(0, 10rem)
+      minmax(0, 40rem)
+      minmax(0, 30rem)
+      minmax(2rem, 1fr);
     grid-template-rows: min-content auto;
     justify-items: center;
     align-content: start;

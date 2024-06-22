@@ -1,19 +1,14 @@
 import NumberedTitle from "../../Components/NumberedTitle";
 import DotBtn from "../../Components/DotBtn";
 import CrewContent from "../../Components/CrewContent";
-import { useLoadData } from "../../Components/utils";
+import { useLoadData } from "../../utils/LoadData";
 import LoadingLayout from "../../Components/LoadingLayout";
 
 export default function Crew() {
-  const {  
-    isLoading,
-    data,
-    activeTab,
-    changeTab 
-  } = useLoadData("crew")
+  const { isLoading, data, activeTab, changeTab } = useLoadData("crew");
 
   if (isLoading) {
-    return <LoadingLayout/>;
+    return <LoadingLayout />;
   }
 
   return (
@@ -21,7 +16,7 @@ export default function Crew() {
       <NumberedTitle number="02" title="Meet your crew" />
       <div className="dot-indicators flex">
         {data.map((item, index) => (
-          <DotBtn 
+          <DotBtn
             key={index}
             role={item.role}
             isClicked={() => changeTab(index)}
@@ -29,7 +24,7 @@ export default function Crew() {
           />
         ))}
       </div>
-      <CrewContent 
+      <CrewContent
         role={data[activeTab].role}
         name={data[activeTab].name}
         bio={data[activeTab].bio}

@@ -1,17 +1,17 @@
 .destination-info {
-    flex-direction: column;
-    border-block-start: 1px solid rgba( var(--clr-light), 0.1);
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
-    p {
-        font-size: 1.75rem;
-    }
-    @media(min-width: 35em) {
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    @media(min-width: 64em) {
-        --gap: min(6vw, 6rem);
-        justify-content: start;
-    }
+  flex-direction: column;
+  border-block-start: 1px solid rgba(var(--clr-light), 0.1);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  p {
+    font-size: 1.75rem;
+  }
+  @media (min-width: 35em) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @media (min-width: 64em) {
+    --gap: min(6vw, 6rem);
+    justify-content: start;
+  }
 }

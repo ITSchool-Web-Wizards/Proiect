@@ -1,14 +1,14 @@
 .grid-container--crew > img {
-    grid-area: image;
+  grid-area: image;
+  max-width: 90%;
+  border-bottom: 1px solid rgba(var(--clr-light), 0.1);
+
+  @media (min-width: 35em) {
+    max-width: 60%;
+  }
+
+  @media (min-width: 64em) {
+    grid-column: span 2;
     max-width: 90%;
-    border-bottom: 1px solid rgba( var(--clr-light), 0.1);
-
-    @media(min-width: 35em){
-        max-width: 60%;
-    }
-
-    @media(min-width: 64em){
-        grid-column: span 2;
-        max-width: 90%;
-    }
+  }
 }

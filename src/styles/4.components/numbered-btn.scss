@@ -17,7 +17,7 @@
       border-color: rgb(var(--clr-light));
     }
   }
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     flex-direction: column;
     --gap: 2rem;
     font-size: 2rem;

@@ -9,7 +9,7 @@
   display: grid;
   place-items: center;
   padding-block-end: 1.5rem;
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     text-align: left;
 
     column-gap: var(--container-gap, 2rem);
@@ -21,7 +21,7 @@
   p:not([class]) {
     max-width: 50ch;
   }
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     grid-template-columns:
       minmax(2rem, 1fr)
       minmax(0, 60rem)
@@ -46,7 +46,7 @@
     "tabs"
     "content";
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     grid-template-columns:
       minmax(2rem, 1fr)
       minmax(0, 40rem)
@@ -68,11 +68,11 @@
     "dots"
     "image";
 
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     --flow-space: 2rem;
   }
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     grid-template-columns:
       minmax(2rem, 1fr)
       minmax(0, 40rem)
@@ -94,11 +94,11 @@
     "tabs"
     "content";
 
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     --flow-space: 2rem;
   }
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     grid-template-columns:
       minmax(2rem, 1fr)
       minmax(0, 10rem)

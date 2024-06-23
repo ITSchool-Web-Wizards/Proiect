@@ -1,7 +1,7 @@
 .primary-header {
   justify-content: space-between;
   align-items: center;
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     &::after {
       content: "";
       display: block;

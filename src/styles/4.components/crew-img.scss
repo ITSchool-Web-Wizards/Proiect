@@ -3,11 +3,11 @@
   max-width: 90%;
   border-bottom: 1px solid rgba(var(--clr-light), 0.1);
 
-  @media (min-width: 35em) {
+  @media (min-width: 35rem) {
     max-width: 60%;
   }
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     grid-column: span 2;
     max-width: 90%;
   }

@@ -25,7 +25,7 @@
     background-image: url(./assets/technology/background-technology-mobile.jpg);
   }
 
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     &.background-homepage {
       background-image: url(./assets/home/background-home-tablet.jpg);
       background-position: center center;
@@ -45,7 +45,7 @@
     }
   }
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     &.background-homepage {
       background-image: url(./assets/home/background-home-desktop.jpg);
     }

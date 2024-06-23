@@ -6,11 +6,11 @@
   p {
     font-size: 1.75rem;
   }
-  @media (min-width: 35em) {
+  @media (min-width: 35rem) {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     --gap: min(6vw, 6rem);
     justify-content: start;
   }

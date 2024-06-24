@@ -19,7 +19,7 @@ const HomePage = () => {
       const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer `,
+          Authorization: `Bearer`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -28,7 +28,7 @@ const HomePage = () => {
             {
               role: "system",
               content:
-              "Ești un profesor de matematică. Scrie soluția și explică metodic cum se aplică soluția pentru problema respectivă, în română.",
+              "Ești un profesor de matematică. Scrie soluția și explică metodic cum se aplică soluția pentru problema respectivă, în română. .",
                 // "You are a personal math tutor. Write and run code to answer math questions and explain the method is apply to solve it.",
             },
             { role: "user", content: input },
@@ -72,7 +72,7 @@ const HomePage = () => {
       </div>
       <div className="input-area">
         <input type="text" value={input} onChange={handleInput} placeholder="Type your message..." />
-        <button onClick={sendMessage}>Send</button>
+        <button className="inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900" onClick={sendMessage}>Send</button>
       </div>
     </div>
   );

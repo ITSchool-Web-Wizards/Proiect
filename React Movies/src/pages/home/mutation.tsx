@@ -1,10 +1,13 @@
-export const fetchMovies = async () => {
+export const rateMovie = async (movieId: number, rating :number) => {
     // Facem o solicitare HTTP pentru a obține un nou `guest_session_id`
-    const res = await fetch('https://api.themoviedb.org/3/movie/popular?language=ro-RO&page=1', {
+    const res = await fetch(`"https://api.themoviedb.org/3/movie/${movieId}/rating?guest_session_id=${localStorage.getItem("guest_session_id")}?api_key=02f3192413ff2d7b050242e52d7c6741`, 
+    {
+        method: "POST",
         headers: {
             accept: 'application/json',  // Specificăm că acceptăm răspunsuri JSON
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMmYzMTkyNDEzZmYyZDdiMDUwMjQyZTUyZDdjNjc0MSIsIm5iZiI6MTcxOTI1MTMyMC41MDc3NzcsInN1YiI6IjY2NzQxZDkxMWQwZjAyZDEwY2M0ZjFkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0yQbLqlWBwI4fGpD4bfrRIR4e7BuXiwMdvQCICfNJGc'  // Autorizarea necesară
+            "content-type": "aplication/json;charset=utf-8",
         },
+        body:`{"value": ${rating}}`,
     });
 
     // Verificăm dacă răspunsul este OK
@@ -17,13 +20,17 @@ export const fetchMovies = async () => {
     const data = await res.json();
     return data;
 };
-export const fetchTvShows = async () => {
+
+export const rateTvShow = async (tvShowId: number, rating :number) => {
     // Facem o solicitare HTTP pentru a obține un nou `guest_session_id`
-    const res = await fetch('https://api.themoviedb.org/3/tv/popular?language=ro-RO&page=1', {
+    const res = await fetch(`"https://api.themoviedb.org/3/tv/${tvShowId}/rating?guest_session_id=${localStorage.getItem("guest_session_id")}?api_key=02f3192413ff2d7b050242e52d7c6741`, 
+    {
+        method: "POST",
         headers: {
             accept: 'application/json',  // Specificăm că acceptăm răspunsuri JSON
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMmYzMTkyNDEzZmYyZDdiMDUwMjQyZTUyZDdjNjc0MSIsIm5iZiI6MTcxOTI1MTMyMC41MDc3NzcsInN1YiI6IjY2NzQxZDkxMWQwZjAyZDEwY2M0ZjFkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0yQbLqlWBwI4fGpD4bfrRIR4e7BuXiwMdvQCICfNJGc'  // Autorizarea necesară
+            "content-type": "aplication/json;charset=utf-8",
         },
+        body:`{"value": ${rating}}`,
     });
 
     // Verificăm dacă răspunsul este OK

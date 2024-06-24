@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchTvShowDetails } from './query';
 import { useParams } from 'react-router-dom';
@@ -108,7 +107,7 @@ export const TvShow = () => {
 
                 <List.Item>
                   <List.Header>Seasons:</List.Header>
-                  <List.Description>
+                  <List.Description style={{height: "200px", overflowY: "scroll" }}>
                     <Accordion defaultActiveIndex={0} panels={seasonPanels} styled />
                   </List.Description>
                 </List.Item>

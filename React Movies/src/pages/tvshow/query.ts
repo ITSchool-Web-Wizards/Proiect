@@ -4,7 +4,7 @@ export const fetchTvShowDetails = async (tvShowId: string) => {
         {
             headers: {
                 accept: 'application/json',  // Specificăm că acceptăm răspunsuri JSON
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZTczOTg3MjMzMDA5NDgzMzFlNTRlZGZiMzViOGJhZSIsInN1YiI6IjY2NzQxZDkxMWQwZjAyZDEwY2M0ZjFkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0ahV9tS6rFEAc3Ttiy3bd0BIsNmOiHrcPaNJsbvlmas'  // Autorizarea necesară
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMmYzMTkyNDEzZmYyZDdiMDUwMjQyZTUyZDdjNjc0MSIsIm5iZiI6MTcxOTI1MTMyMC41MDc3NzcsInN1YiI6IjY2NzQxZDkxMWQwZjAyZDEwY2M0ZjFkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0yQbLqlWBwI4fGpD4bfrRIR4e7BuXiwMdvQCICfNJGc'  // Autorizarea necesară
             },
         }
     );

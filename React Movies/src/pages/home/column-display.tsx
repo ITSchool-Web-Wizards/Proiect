@@ -1,4 +1,4 @@
-import { Card, Grid, Form, Icon, Label } from "semantic-ui-react";
+import { Card, Grid, Form, Label } from "semantic-ui-react";
 import { DisplayType } from ".";
 import { Link } from "react-router-dom";
 import { useState } from "react";

@@ -4,6 +4,7 @@ import { DisplayType } from "../home";
 import { useQuery } from "@tanstack/react-query";
 import { fetchRatedMovies, fetchRatedTvShows } from "./query";
 import { ColumnDisplay } from "../home/column-display";
+import { Navigate } from "react-router-dom";
 
 export const Rated = () => {
     const [activeTab, setActiveTab] = useState<DisplayType>(DisplayType.Movies);
@@ -18,10 +19,14 @@ export const Rated = () => {
         queryFn: fetchRatedTvShows,
     });
 
-    if (isLoadingRatedMovies || isLoadingRatedTvShows ) {
-        return <Loader active />
+    if (localStorage.getItem("guest_session_id") === null) {
+        return <Navigate to={"/auth"} />;
     }
-    
+
+    if (isLoadingRatedMovies || isLoadingRatedTvShows) {
+        return <Loader active />;
+    }
+
     return (
         <Container style={{ marginTop: 50 }}>
             <Menu pointing secondary>
@@ -41,28 +46,20 @@ export const Rated = () => {
                 {activeTab === DisplayType.Movies ? (
                     <div>
                         <Header as="h2">Filme apreciate</Header>
-                        {isLoadingRatedMovies ? (
-                            <p>Loading...</p>
-                        ) : (
-                            <ColumnDisplay
-                                data={ratedMovies?.results}
-                                displayType={DisplayType.Movies}
-                                isRated
-                            />
-                        )}
+                        <ColumnDisplay
+                            data={ratedMovies?.results}
+                            displayType={DisplayType.Movies}
+                            isRated
+                        />
                     </div>
                 ) : (
                     <div>
                         <Header as="h2">Seriale Apreciate</Header>
-                        {isLoadingRatedTvShows ? (
-                            <p>Loading...</p>
-                        ) : (
-                            <ColumnDisplay
-                                data={ratedTvShows?.results}
-                                displayType={DisplayType.TvShows}
-                                isRated
-                            />
-                        )}
+                        <ColumnDisplay
+                            data={ratedTvShows?.results}
+                            displayType={DisplayType.TvShows}
+                            isRated
+                        />
                     </div>
                 )}
             </Segment>

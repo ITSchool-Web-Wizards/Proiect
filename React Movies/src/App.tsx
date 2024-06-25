@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css'
-import { Navbar } from "./components/navbar";
+import { Navbar } from './components/navbar';
 import { Auth } from "./pages/auth";
 import { Home } from "./pages/home";
 import { Movie } from './pages/movie';
@@ -12,7 +12,6 @@ function App() {
   return (
   <>
   <div>
-    {""}
     <Router>
     <Navbar />
       <Routes>

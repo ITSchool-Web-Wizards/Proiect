@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const themes = {
   corporate: "corporate",
-  business: "business",
+  night: "night",
 };
 
 const HomePage = () => {
@@ -22,10 +22,11 @@ const HomePage = () => {
 
   const toggleTheme = () => {
     const newTheme =
-      theme === themes.corporate ? themes.business : themes.corporate;
+      theme === themes.corporate ? themes.night : themes.corporate;
     document.documentElement.setAttribute("data-theme", newTheme);
     setTheme(newTheme);
   };
+
   const handleInput = (event) => {
     setInput(event.target.value);
   };
@@ -94,13 +95,14 @@ const HomePage = () => {
 
   return (
     <div className="app-container">
-      <div className="theme-toggle">
+      <div className="theme-toggle" aria-label="Toggle theme">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
             className="theme-controller"
             value="synthwave"
+            onClick={toggleTheme}
           />
 
           {/* sun icon */}

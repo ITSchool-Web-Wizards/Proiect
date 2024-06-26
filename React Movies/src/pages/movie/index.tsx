@@ -1,7 +1,8 @@
 import { useQuery} from "@tanstack/react-query";
 import { fetchMovieDetails } from "./query";
 import { useParams } from "react-router-dom"
-import { Grid, Header, Loader, Segment, Image, List, Label } from "semantic-ui-react"
+import { Grid, Header, Loader, Segment, List, Label } from "semantic-ui-react"
+import { Image } from 'react-bootstrap';
 
 
 export const Movie = () =>{
@@ -25,8 +26,8 @@ if (isLoading) {
             <Grid.Row>
                 <Grid.Column width={6}>
                     <div style={{display: "flex", alignItems: "center", justifyContent: "center", height: "100"}} >
-                        <Image src={`https:/image.tmdb.org/t/p/original/${data.poster_path}`} size="medium" centered
-                        />;
+                    <Image src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} fluid />
+
                     </div>
 
                 </Grid.Column>

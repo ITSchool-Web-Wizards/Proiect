@@ -56,7 +56,7 @@ export const ColumnDisplay = (props: Props) => {
               <Card
                  // Ajustăm înălțimea și lățimea cardului
                 fluid
-                image={`https:/image.tmdb.org/t/p/original/${displayData.poster_path}`}
+                image={`https://image.tmdb.org/t/p/original/${displayData.poster_path}`}
                 header={displayType === DisplayType.Movies ? displayData.title : displayData.name}
                 meta={`Release Date : ${displayData.release_date} | Rating: ${displayData.vote_avarage}`}
                 description={displayData.overview.slice(0, 350) + "..."}

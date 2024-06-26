@@ -77,7 +77,7 @@ const HomePage = () => {
         draggable: true,
         progress: undefined,
       });
-      return "Error getting response.";
+      return "Error getting a response.";
     }
   };
 

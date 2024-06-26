@@ -4,6 +4,7 @@
 // https://medium.com/bina-nusantara-it-division/understanding-react-query-11e56960e90c
 // https://ninza7.medium.com/building-an-ai-chatbot-with-react-next-js-tailwind-css-and-openai-2e2bb0ca6b17
 // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
+// https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables
 
 import React from "react";
 import { useState } from "react";
@@ -33,12 +34,13 @@ const HomePage = () => {
 
   const fetchResponse = async () => {
     try {
+      console.log('Checking environment variables:', OPENAI_API_KEY);
       const response = await fetch(
         `https://api.openai.com/v1/chat/completions`,
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer `,
+            "Authorization": `Bearer ${OPENAI_API_KEY}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({

@@ -11,7 +11,7 @@ async function getSalesData() {
 
 async function fetchSalesData() {
     const client = createClient();
-    
+
     let { data: salesData, error } = await client
         .from('order_table')
         .select('price_paid_in_cents');

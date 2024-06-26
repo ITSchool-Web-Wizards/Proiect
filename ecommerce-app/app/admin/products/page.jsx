@@ -90,7 +90,7 @@ async function ProductsTable() {
                                         <span className='sr-only'>Actions</span>
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent>
-                                        <ActiveToggleDropdownItem 
+                                        <ActiveToggleDropdownItem
                                             id={product.id}
                                             is_available_for_purchase={product.is_available_for_purchase}
                                         />

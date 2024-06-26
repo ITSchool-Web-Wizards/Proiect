@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardDescription, CardTitle, CardContent, CardFooter } from './ui/card';
 import { formatCurrency } from '@/lib/formatters';
 import { Button } from './ui/button';
-import  Link  from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 
 

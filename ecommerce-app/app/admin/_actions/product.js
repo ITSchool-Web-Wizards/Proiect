@@ -2,8 +2,6 @@
 import { notFound, redirect } from 'next/navigation';
 import { createClient } from '../../../utils/supabase/client'
 
-
-
 export async function addProduct(formData) {
     const supabase = createClient();
 
@@ -49,4 +47,9 @@ export async function deleteProduct(id) {
 
     if (product == null) return notFound();
 
+    redirect("/admin/products")
+    
 }
+
+
+

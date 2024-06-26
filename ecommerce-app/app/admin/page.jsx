@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { createClient } from "@/utils/supabase/client";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
 
@@ -62,7 +62,7 @@ async function fetchProductData() {
     const client = createClient();
     const { data: productData, error } = await client
         .from('product_table')
-        .select('is_available_for_purchase')
+        .select('is_available_for_purchase');
 
     if (error) {
         console.error('Error fetching product data:', error);

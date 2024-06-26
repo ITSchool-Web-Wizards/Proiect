@@ -1,16 +1,14 @@
-'use server'
+// 'use server'
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-
 import { createClient } from '@/utils/supabase/server'
 
 export async function login(formData) {
   const supabase = createClient()
 
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
   const data = {
+    username: formData.get('username'),
     email: formData.get('email'),
     password: formData.get('password'),
   }
@@ -22,7 +20,7 @@ export async function login(formData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/account')
+  redirect('/')
 }
 
 export async function signup(formData) {
@@ -40,5 +38,6 @@ export async function signup(formData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/account')
+  redirect('/')
 }
+

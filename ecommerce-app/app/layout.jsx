@@ -6,7 +6,7 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
-const inter = Inter ({subsets: ["latin"], variable: "--font-sans"})
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
@@ -14,15 +14,15 @@ export const metadata = {
   description: "A simple ecommerce app built with Next.js",
 };
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}>
+        "min-h-screen bg-background font-sans antialiased",
+        inter.variable
+      )}>
         {children}
-        </body>
+      </body>
     </html>
   );
 }

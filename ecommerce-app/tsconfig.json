@@ -37,7 +37,7 @@
     "apecommerce-app/app/layout.jsx",
     "app/layout.jsx",
     ".next/types/**/*.ts"
-, "app/admin/products/[id]/edit/page.jsx"  ],
+, "app/admin/products/[id]/edit/page.jsx", "app/(customerFacing)/login/page.jsx", "app/(customerFacing)/login/auth/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

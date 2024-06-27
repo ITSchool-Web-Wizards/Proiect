@@ -41,18 +41,9 @@ export default function App() {
   const activeBackground = "background-" + location.pathname.slice(1);
 
   const [isVisible, setIsVisible] = useState(false);
-
   const showHamburger = () => {
     setIsVisible((prevState) => !prevState);
   };
-
-  useEffect(() => {
-    const nav = document.querySelector(".primary-navigation");
-
-    if (nav) {
-      nav.setAttribute("data-visible", isVisible);
-    }
-  }, [isVisible]);
 
   return (
       <div className={`background-image ${activeBackground}`}>

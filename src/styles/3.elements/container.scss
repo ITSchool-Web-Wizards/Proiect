@@ -93,6 +93,8 @@
     "image"
     "tabs"
     "content";
+  gap: 2rem;
+  margin-block-end: 3rem;
 
   @media (min-width: 48rem) {
     --flow-space: 2rem;

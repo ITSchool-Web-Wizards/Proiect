@@ -22,9 +22,11 @@
     transform: translateX(100%);
     transition: transform 400ms ease-in-out;
   }
+
   @media (min-width: 35rem) {
     padding-inline: clamp(3rem, 10vw, 6rem);
   }
+  
   @media (min-width: 64rem) {
     margin-block: 2rem;
   }

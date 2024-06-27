@@ -9,17 +9,47 @@
 import React from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.css';
+
+// import { generateChatResponse } from './pages/api/openai';
 
 const themes = {
   corporate: "corporate",
   night: "night",
 };
 
+
+
 const HomePage = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [theme, setTheme] = useState(themes.corporate);
+
+  const fetchResponse = async (userInput) => {
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: userInput }),
+      });
+  
+      if (!response.ok) {
+        // Attempt to read the error message from the response body
+        const errorText = await response.text();
+        toast.error(`Failed to fetch data: ${errorText}`);
+        throw new Error(`HTTP error ${response.status}: ${errorText}`);
+      }
+  
+      const data = await response.json();
+      return data.choices[0].message.content;
+    } catch (error) {
+      // Handling any other errors (e.g., network issues, parsing errors)
+      toast.error(`Error getting response: ${error.message}`);
+      throw error; // Re-throwing the error if you need to handle it further upstream
+    }
+  };
 
   const toggleTheme = () => {
     const newTheme =
@@ -32,67 +62,25 @@ const HomePage = () => {
     setInput(event.target.value);
   };
 
-  const fetchResponse = async () => {
-    try {
-      console.log('Checking environment variables:', OPENAI_API_KEY);
-      const response = await fetch(
-        `https://api.openai.com/v1/chat/completions`,
-        {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${OPENAI_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [
-              {
-                role: "system",
-                content:
-                  "Ești un profesor de matematică. Scrie soluția și explică metodic cum se aplică soluția pentru problema respectivă, în română. .",
-                // "You are a personal math tutor. Write and run code to answer math questions and explain the method is apply to solve it.",
-              },
-              { role: "user", content: input },
-            ],
-            temperature: 0.21,
-            max_tokens: 125,
-            top_p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
-          }),
-        }
-      );
-      const result = await response.json();
-      if (!response.ok)
-        throw new Error(
-          result.message ||
-            `Error communicating with the openai server. Response from server: ${response.status}`
-        );
-      return result.choices[0].message.content;
-    } catch (error) {
-      toast.error(`Fetching response failed: ${error.message}`, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      return "Error getting a response.";
-    }
-  };
-
   const sendMessage = async () => {
-    const userMessage = input;
+    if (!input.trim()) {
+      toast.warn("Please enter a message before sending.");
+      return;
+    }
+
+    const userMessage = input.trim();
     setMessages([...messages, { text: userMessage, sender: "user" }]);
     setInput("");
 
-    const botResponse = await fetchResponse();
-    setMessages((messages) => [
-      ...messages,
-      { text: botResponse, sender: "bot" },
-    ]);
+    try {
+      const botResponse = await fetchResponse(userMessage);
+      setMessages((messages) => [
+        ...messages,
+        { text: botResponse, sender: "bot" },
+      ]);
+    } catch (error) {
+      toast.error(`Failed to send message: ${error.message}`);
+    }
   };
 
   return (
@@ -127,7 +115,17 @@ const HomePage = () => {
         </label>
       </div>
       <div className="chat-container">
-        <ToastContainer />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <h1>Welcome to the Math Professor GPT Application!</h1>
         <div className="chatbox">
           {messages.map((msg, index) => (

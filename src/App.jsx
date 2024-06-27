@@ -2,7 +2,7 @@ import NavBtn from "./Components/NavBtn";
 import HamburgerBtn from "./Components/HamburgerBtn";
 import logo from "../public/assets/shared/logo.svg";
 import { useLocation, Outlet, useNavigate, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const mainTabs = [
@@ -40,16 +40,30 @@ export default function App() {
   const activeTab = mainTabs.findIndex((tab) => tab.path === location.pathname);
   const activeBackground = "background-" + location.pathname.slice(1);
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const showHamburger = () => {
+    setIsVisible((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    const nav = document.querySelector(".primary-navigation");
+
+    if (nav) {
+      nav.setAttribute("data-visible", isVisible);
+    }
+  }, [isVisible]);
+
   return (
       <div className={`background-image ${activeBackground}`}>
         <header className="primary-header flex">
           <Link to="/homepage">
             <img src={logo} alt="space tourism logo" className="logo" />
           </Link>
-          <HamburgerBtn />
+          <HamburgerBtn isVisible={isVisible} showHamburger={showHamburger}/>
           <nav id="primary-navigation"
               className="primary-navigation underline-indicators flex"
-              data-visible="false">
+              data-visible={isVisible}>
               {mainTabs.map((tab, index) => (
                 <NavBtn
                   key={index}

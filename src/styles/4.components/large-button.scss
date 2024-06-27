@@ -1,5 +1,5 @@
 .large-button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: relative;
   z-index: 1;
   display: inline-grid;
@@ -23,5 +23,8 @@
   :focus::after {
     opacity: 1;
     transform: scale(1.5);
+  }
+  @media(min-width: 35rem){
+    font-size: 2rem;
   }
 }

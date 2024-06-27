@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "ecommerce-app/.next/typecommerce-app/app/page.jsx",
+    "apecommerce-app/app/layout.jsx",
+    "app/layout.jsx",
+    ".next/types/**/*.ts"
+, "app/admin/products/[id]/edit/page.jsx", "app/(customerFacing)/login/page.jsx", "app/(customerFacing)/login/auth/page.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

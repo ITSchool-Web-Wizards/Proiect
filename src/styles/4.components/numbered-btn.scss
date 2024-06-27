@@ -1,0 +1,26 @@
+.numbered-btn {
+  flex-direction: row;
+  --gap: 1rem;
+  font-size: 1.75rem;
+  grid-area: tabs;
+  button {
+    padding: 0 1em;
+    aspect-ratio: 1;
+    border: 2px solid rgba(var(--clr-light), 0.25);
+    border-radius: 50%;
+    &[aria-selected="true"] {
+      color: rgb(var(--clr-dark));
+      background-color: rgb(var(--clr-light));
+    }
+    &:hover,
+    &focus {
+      border-color: rgb(var(--clr-light));
+    }
+  }
+  @media (min-width: 64rem) {
+    flex-direction: column;
+    --gap: 2rem;
+    font-size: 2rem;
+    justify-self: end;
+  }
+}

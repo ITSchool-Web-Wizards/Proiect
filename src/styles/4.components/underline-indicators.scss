@@ -1,0 +1,23 @@
+.underline-indicators > * {
+  cursor: pointer;
+  padding: var(--underline-gap, 0.5rem) 0;
+  border: 0;
+  border-bottom: 0.2rem solid rgba(var(--clr-light), 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: rgba(var(--clr-light), 0.5);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: rgba(var(--clr-white), 1);
+  border-color: rgba(var(--clr-light), 1);
+}
+
+@media (max-width: 35rem) {
+  .underline-indicators > .active {
+    border: 0;
+  }
+}

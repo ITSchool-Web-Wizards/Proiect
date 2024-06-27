@@ -18,8 +18,6 @@ const themes = {
   night: "night",
 };
 
-
-
 const HomePage = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -27,29 +25,26 @@ const HomePage = () => {
 
   const fetchResponse = async (userInput) => {
     try {
-      const response = await fetch("/api", {
+      const response = await fetch("/api/route", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ content: userInput }),
       });
-  
       if (!response.ok) {
-        // Attempt to read the error message from the response body
         const errorText = await response.text();
         toast.error(`Failed to fetch data: ${errorText}`);
         throw new Error(`HTTP error ${response.status}: ${errorText}`);
       }
-  
       const data = await response.json();
       return data.choices[0].message.content;
     } catch (error) {
-      // Handling any other errors (e.g., network issues, parsing errors)
+
       toast.error(`Error getting response: ${error.message}`);
-      throw error; // Re-throwing the error if you need to handle it further upstream
-    }
+      throw error;
   };
+}
 
   const toggleTheme = () => {
     const newTheme =

@@ -1,0 +1,117 @@
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-block-end: 1.5rem;
+  @media (min-width: 64rem) {
+    text-align: left;
+
+    column-gap: var(--container-gap, 2rem);
+  }
+}
+
+.grid-container--home {
+  padding-inline: 1.5rem;
+  p:not([class]) {
+    max-width: 50ch;
+  }
+  @media (min-width: 64rem) {
+    grid-template-columns:
+      minmax(2rem, 1fr)
+      minmax(0, 60rem)
+      minmax(0, 35rem)
+      minmax(2rem, 1fr);
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+    > *:first-child {
+      grid-column: 2;
+    }
+    > *:last-child {
+      grid-column: 3;
+    }
+  }
+}
+
+.grid-container--destination {
+  --flow-space: 1.5rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+
+  @media (min-width: 64rem) {
+    grid-template-columns:
+      minmax(2rem, 1fr)
+      minmax(0, 40rem)
+      minmax(0, 40rem)
+      minmax(2rem, 1fr);
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". image tabs ."
+      ". image content .";
+  }
+}
+
+.grid-container--crew {
+  grid-template-areas:
+    "title"
+    "content"
+    "dots"
+    "image";
+
+  @media (min-width: 48rem) {
+    --flow-space: 2rem;
+  }
+
+  @media (min-width: 64rem) {
+    grid-template-columns:
+      minmax(2rem, 1fr)
+      minmax(0, 40rem)
+      minmax(0, 40rem)
+      minmax(2rem, 1fr);
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". content image ."
+      ". dots image .";
+  }
+}
+
+.grid-container--technology {
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  gap: 2rem;
+  margin-block-end: 3rem;
+
+  @media (min-width: 48rem) {
+    --flow-space: 2rem;
+  }
+
+  @media (min-width: 64rem) {
+    grid-template-columns:
+      minmax(2rem, 1fr)
+      minmax(0, 10rem)
+      minmax(0, 40rem)
+      minmax(0, 30rem)
+      minmax(2rem, 1fr);
+    grid-template-rows: min-content auto;
+    justify-items: center;
+    align-content: start;
+    grid-template-areas:
+      ". title title title ."
+      ". tabs content image image";
+  }
+}
